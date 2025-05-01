@@ -36,7 +36,7 @@ const SingleNewsPage: React.FC = () => {
       
       Le projet devrait durer 18 mois et sera réalisé par phases pour minimiser les perturbations des services publics.`,
     date: '2025-04-15',
-    image: 'https://images.pexels.com/photos/417273/pexels-photo-417273.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750',
+    image: 'https://res.cloudinary.com/dipmwyrfq/image/upload/v1746046869/hotel-de-ville_mg3z2j.jpg',
     category: currentLang === 'en' ? 'Announcements' : 'Annonces',
     author: 'Communications Department'
   };
