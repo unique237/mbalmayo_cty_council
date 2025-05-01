@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { ChevronDown, Menu, X, Search, Landmark } from 'lucide-react';
+import { ChevronDown, Menu, X, Search } from 'lucide-react';
 import LanguageSwitcher from '../ui/LanguageSwitcher';
 
 const Header: React.FC = () => {
@@ -12,22 +12,9 @@ const Header: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
-  const [isSearchOpen, setIsSearchOpen] = useState(false); // New state for search toggle
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
 
   const currentLang = i18n.language;
-
-  const handleSearch = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (searchQuery.trim()) {
-      navigate(`/${currentLang}/news?search=${encodeURIComponent(searchQuery.trim())}`);
-      setSearchQuery('');
-      setIsSearchOpen(false); // Close search input after submission
-    }
-  };
-
-  const toggleSearch = () => {
-    setIsSearchOpen(!isSearchOpen);
-  };
 
   const getLocalizedPath = (path: string) => {
     if (currentLang === 'en') {
@@ -55,9 +42,26 @@ const Header: React.FC = () => {
     return segments.join('/');
   };
 
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (searchQuery.trim()) {
+      navigate(`/${currentLang}/${getLocalizedPath('news')}?search=${encodeURIComponent(searchQuery.trim())}`);
+      setSearchQuery('');
+      setIsSearchOpen(false);
+    }
+  };
+
+  const toggleSearch = () => {
+    setIsSearchOpen(!isSearchOpen);
+  };
+
   const isActive = (path: string) => {
+    // Get the current path without the language prefix
     const currentPath = location.pathname.split('/').slice(2).join('/');
-    return currentPath.startsWith(path);
+    // Get the localized version of the provided path
+    const localizedPath = getLocalizedPath(path);
+    // Compare the current path with both the English and localized path
+    return currentPath === path || currentPath === localizedPath || currentPath.startsWith(path + '/') || currentPath.startsWith(localizedPath + '/');
   };
 
   const navigationItems = [

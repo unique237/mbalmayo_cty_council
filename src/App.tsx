@@ -1,26 +1,32 @@
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
-import Layout from './components/Layout';
-import HomePage from './pages/HomePage';
-import AboutPage from './pages/AboutPage';
-import MayorPage from './pages/MayorPage';
-import ServicesPage from './pages/ServicesPage';
-import NewsPage from './pages/NewsPage';
-import SingleNewsPage from './pages/SingleNewsPage';
-import FacilitiesPage from './pages/FacilitiesPage';
-import EventsPage from './pages/EventsPage';
-import SportsPage from './pages/SportsPage';
-import MediaPage from './pages/MediaPage';
-import ContactPage from './pages/ContactPage';
-import NotFoundPage from './pages/NotFoundPage';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import Layout from "./components/Layout";
+import HomePage from "./pages/HomePage";
+import AboutPage from "./pages/AboutPage";
+import MayorPage from "./pages/MayorPage";
+import ServicesPage from "./pages/ServicesPage";
+import NewsPage from "./pages/NewsPage";
+import SingleNewsPage from "./pages/SingleNewsPage";
+import FacilitiesPage from "./pages/FacilitiesPage";
+import EventsPage from "./pages/EventsPage";
+import SportsPage from "./pages/SportsPage";
+import MediaPage from "./pages/MediaPage";
+import ContactPage from "./pages/ContactPage";
+import NotFoundPage from "./pages/NotFoundPage";
 
-import BirthMarriage from './pages/services/BirthMarriage';
-import BusinessLicenses from './pages/services/BusinessLicenses';
-import BuildingPermits from './pages/services/BuildingPermits';
+import BirthMarriage from "./pages/services/BirthMarriage";
+import BusinessLicenses from "./pages/services/BusinessLicenses";
+import BuildingPermits from "./pages/services/BuildingPermits";
+import WasteCollection from "./pages/services/WasteCollection";
 
-import History from './pages/History';
+import History from "./pages/History";
 
-import './i18n';
+import "./i18n";
 
 function App() {
   const { i18n } = useTranslation();
@@ -29,8 +35,11 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Navigate to={`/${currentLang}/home`} replace />} />
-        
+        <Route
+          path="/"
+          element={<Navigate to={`/${currentLang}/home`} replace />}
+        />
+
         {/* English Routes */}
         <Route path="/en" element={<Navigate to="/en/home" replace />} />
         <Route path="/en/*" element={<Layout />}>
@@ -40,8 +49,18 @@ function App() {
           <Route path="about/history" element={<History />} />
           <Route path="services/*" element={<ServicesPage />} />
           <Route path="services/birth-marriage" element={<BirthMarriage />} />
-          <Route path="services/business-licenses" element={<BusinessLicenses />} />
-          <Route path="services/building-permits" element={<BuildingPermits />} />
+          <Route
+            path="services/business-licenses"
+            element={<BusinessLicenses />}
+          />
+          <Route
+            path="services/building-permits"
+            element={<BuildingPermits />}
+          />
+          <Route
+            path="services/waste-collection"
+            element={<WasteCollection />}
+          />
           <Route path="news" element={<NewsPage />} />
           <Route path="news/:id" element={<SingleNewsPage />} />
           <Route path="facilities/*" element={<FacilitiesPage />} />
@@ -51,7 +70,7 @@ function App() {
           <Route path="contact" element={<ContactPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Route>
-        
+
         {/* French Routes */}
         <Route path="/fr" element={<Navigate to="/fr/accueil" replace />} />
         <Route path="/fr/*" element={<Layout />}>
@@ -61,8 +80,18 @@ function App() {
           <Route path="a-propos/history" element={<History />} />
           <Route path="services/*" element={<ServicesPage />} />
           <Route path="services/birth-marriage" element={<BirthMarriage />} />
-          <Route path="services/business-licenses" element={<BusinessLicenses />} />
-          <Route path="services/building-permits" element={<BuildingPermits />} />
+          <Route
+            path="services/business-licenses"
+            element={<BusinessLicenses />}
+          />
+          <Route
+            path="services/building-permits"
+            element={<BuildingPermits />}
+          />
+          <Route
+            path="services/waste-collection"
+            element={<WasteCollection />}
+          />
           <Route path="actualites" element={<NewsPage />} />
           <Route path="actualites/:id" element={<SingleNewsPage />} />
           <Route path="installations/*" element={<FacilitiesPage />} />
@@ -72,7 +101,7 @@ function App() {
           <Route path="contact" element={<ContactPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Route>
-        
+
         {/* Redirect any other language combinations to English */}
         <Route path="*" element={<Navigate to="/en/home" replace />} />
       </Routes>

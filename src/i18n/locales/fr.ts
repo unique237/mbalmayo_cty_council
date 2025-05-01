@@ -26,7 +26,7 @@ const fr: Translation = {
     latestNews: 'Dernières Actualités',
     upcomingEvents: 'Événements à Venir',
     mayorMessage: {
-      title: 'Message du Maire',
+      title: 'Message de Monsieur le Maire',
       subtitle: 'Travailler ensemble pour un avenir meilleur',
       content: 'Bienvenue sur le site officiel de la Mairie de Mbalmayo. Notre administration s\'engage à la transparence, à la responsabilité et au service de tous les résidents. Ensemble, nous pouvons construire une communauté plus prospère et inclusive.',
     },
