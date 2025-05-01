@@ -28,84 +28,90 @@ import History from "./pages/History";
 
 import "./i18n";
 
+//adding real robin.dev
+import { Robin } from "@real-robin/react";
+
 function App() {
   const { i18n } = useTranslation();
   const currentLang = i18n.language;
 
   return (
-    <Router>
-      <Routes>
-        <Route
-          path="/"
-          element={<Navigate to={`/${currentLang}/home`} replace />}
-        />
+    <>
+      <Robin apiKey="rr_ToC3poU6si3M6aBErjDzqqyJvE_uau1b" />
+      <Router>
+        <Routes>
+          <Route
+            path="/"
+            element={<Navigate to={`/${currentLang}/home`} replace />}
+          />
 
-        {/* English Routes */}
-        <Route path="/en" element={<Navigate to="/en/home" replace />} />
-        <Route path="/en/*" element={<Layout />}>
-          <Route path="home" element={<HomePage />} />
-          <Route path="about/*" element={<AboutPage />} />
-          <Route path="about/mayor" element={<MayorPage />} />
-          <Route path="about/history" element={<History />} />
-          <Route path="services/*" element={<ServicesPage />} />
-          <Route path="services/birth-marriage" element={<BirthMarriage />} />
-          <Route
-            path="services/business-licenses"
-            element={<BusinessLicenses />}
-          />
-          <Route
-            path="services/building-permits"
-            element={<BuildingPermits />}
-          />
-          <Route
-            path="services/waste-collection"
-            element={<WasteCollection />}
-          />
-          <Route path="news" element={<NewsPage />} />
-          <Route path="news/:id" element={<SingleNewsPage />} />
-          <Route path="facilities/*" element={<FacilitiesPage />} />
-          <Route path="events/*" element={<EventsPage />} />
-          <Route path="sports/*" element={<SportsPage />} />
-          <Route path="media/*" element={<MediaPage />} />
-          <Route path="contact" element={<ContactPage />} />
-          <Route path="*" element={<NotFoundPage />} />
-        </Route>
+          {/* English Routes */}
+          <Route path="/en" element={<Navigate to="/en/home" replace />} />
+          <Route path="/en/*" element={<Layout />}>
+            <Route path="home" element={<HomePage />} />
+            <Route path="about/*" element={<AboutPage />} />
+            <Route path="about/mayor" element={<MayorPage />} />
+            <Route path="about/history" element={<History />} />
+            <Route path="services/*" element={<ServicesPage />} />
+            <Route path="services/birth-marriage" element={<BirthMarriage />} />
+            <Route
+              path="services/business-licenses"
+              element={<BusinessLicenses />}
+            />
+            <Route
+              path="services/building-permits"
+              element={<BuildingPermits />}
+            />
+            <Route
+              path="services/waste-collection"
+              element={<WasteCollection />}
+            />
+            <Route path="news" element={<NewsPage />} />
+            <Route path="news/:id" element={<SingleNewsPage />} />
+            <Route path="facilities/*" element={<FacilitiesPage />} />
+            <Route path="events/*" element={<EventsPage />} />
+            <Route path="sports/*" element={<SportsPage />} />
+            <Route path="media/*" element={<MediaPage />} />
+            <Route path="contact" element={<ContactPage />} />
+            <Route path="*" element={<NotFoundPage />} />
+          </Route>
 
-        {/* French Routes */}
-        <Route path="/fr" element={<Navigate to="/fr/accueil" replace />} />
-        <Route path="/fr/*" element={<Layout />}>
-          <Route path="accueil" element={<HomePage />} />
-          <Route path="a-propos/*" element={<AboutPage />} />
-          <Route path="a-propos/mayor" element={<MayorPage />} />
-          <Route path="a-propos/history" element={<History />} />
-          <Route path="services/*" element={<ServicesPage />} />
-          <Route path="services/birth-marriage" element={<BirthMarriage />} />
-          <Route
-            path="services/business-licenses"
-            element={<BusinessLicenses />}
-          />
-          <Route
-            path="services/building-permits"
-            element={<BuildingPermits />}
-          />
-          <Route
-            path="services/waste-collection"
-            element={<WasteCollection />}
-          />
-          <Route path="actualites" element={<NewsPage />} />
-          <Route path="actualites/:id" element={<SingleNewsPage />} />
-          <Route path="installations/*" element={<FacilitiesPage />} />
-          <Route path="evenements/*" element={<EventsPage />} />
-          <Route path="sports/*" element={<SportsPage />} />
-          <Route path="mediatheque/*" element={<MediaPage />} />
-          <Route path="contact" element={<ContactPage />} />
-          <Route path="*" element={<NotFoundPage />} />
-        </Route>
+          {/* French Routes */}
+          <Route path="/fr" element={<Navigate to="/fr/accueil" replace />} />
+          <Route path="/fr/*" element={<Layout />}>
+            <Route path="accueil" element={<HomePage />} />
+            <Route path="a-propos/*" element={<AboutPage />} />
+            <Route path="a-propos/mayor" element={<MayorPage />} />
+            <Route path="a-propos/history" element={<History />} />
+            <Route path="services/*" element={<ServicesPage />} />
+            <Route path="services/birth-marriage" element={<BirthMarriage />} />
+            <Route
+              path="services/business-licenses"
+              element={<BusinessLicenses />}
+            />
+            <Route
+              path="services/building-permits"
+              element={<BuildingPermits />}
+            />
+            <Route
+              path="services/waste-collection"
+              element={<WasteCollection />}
+            />
+            <Route path="actualites" element={<NewsPage />} />
+            <Route path="actualites/:id" element={<SingleNewsPage />} />
+            <Route path="installations/*" element={<FacilitiesPage />} />
+            <Route path="evenements/*" element={<EventsPage />} />
+            <Route path="sports/*" element={<SportsPage />} />
+            <Route path="mediatheque/*" element={<MediaPage />} />
+            <Route path="contact" element={<ContactPage />} />
+            <Route path="*" element={<NotFoundPage />} />
+          </Route>
 
-        {/* Redirect any other language combinations to English */}
-        <Route path="*" element={<Navigate to="/en/home" replace />} />
-      </Routes>
-    </Router>
+          {/* Redirect any other language combinations to English */}
+          <Route path="*" element={<Navigate to="/en/home" replace />} />
+        </Routes>
+      </Router>
+    </>
   );
 }
 
