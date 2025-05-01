@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@react-google-maps/api": "^2.20.6",
     "@real-robin/react": "^0.10.3",
     "date-fns": "^3.6.0",
     "framer-motion": "^12.9.2",
