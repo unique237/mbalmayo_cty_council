@@ -15,13 +15,13 @@ const BirthMarriage = () => {
             'Original birth declaration from the hospital',
             'Parents\' national ID cards (photocopies)',
             'Marriage certificate of parents (if applicable)',
-            'Processing fee of 2000 FCFA'
+            'Processing fee of 2,000 FCFA'
           ]
         : [
             'Déclaration de naissance originale de l\'hôpital',
             'Cartes nationales d\'identité des parents (photocopies)',
             'Acte de mariage des parents (le cas échéant)',
-            'Frais de traitement de 2000 FCFA'
+            'Frais de traitement de 2,000 FCFA'
           ],
       timeline: currentLang === 'en' ? '3-5 working days' : '3-5 jours ouvrables',
       notes: currentLang === 'en' 
@@ -38,14 +38,14 @@ const BirthMarriage = () => {
             'National ID cards of both spouses (originals and copies)',
             'Certificate of residence',
             'Two passport-size photos of each spouse',
-            'Processing fee of 15000 FCFA'
+            'Processing fee of 15,000 FCFA'
           ]
         : [
             'Actes de naissance des deux époux',
             'Cartes nationales d\'identité des deux époux (originaux et copies)',
             'Certificat de résidence',
             'Deux photos format passeport de chaque époux',
-            'Frais de traitement de 15000 FCFA'
+            'Frais de traitement de 15,000 FCFA'
           ],
       timeline: currentLang === 'en' ? '15-30 working days' : '15-30 jours ouvrables',
       notes: currentLang === 'en'
