@@ -126,7 +126,7 @@ const Header: React.FC = () => {
           {/* Logo */}
           <Link to={`/${currentLang}/${getLocalizedPath('home')}`} className="flex items-center space-x-2 lg:ml-0">
   <img
-    src="https://res.cloudinary.com/dipmwyrfq/image/upload/v1745938334/logo_bdipmb.jpg"
+    src="https://res.cloudinary.com/dipmwyrfq/image/upload/v1746168715/logo_uedy1g.jpg"
     alt="Mbalmayo City Council Logo"
     className="h-8 w-8 object-contain"
   />
