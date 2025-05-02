@@ -15,7 +15,7 @@ const BirthMarriage = () => {
             'Original birth declaration from the hospital',
             'Parents\' national ID cards (photocopies)',
             'Marriage certificate of parents (if applicable)',
-            'Processing fee of 2000 FCFA'
+            'Processing fee of 2,000 FCFA'
           ]
         : [
             'Déclaration de naissance originale de l\'hôpital',
@@ -38,7 +38,7 @@ const BirthMarriage = () => {
             'National ID cards of both spouses (originals and copies)',
             'Certificate of residence',
             'Two passport-size photos of each spouse',
-            'Processing fee of 15000 FCFA'
+            'Processing fee of 15,000 FCFA'
           ]
         : [
             'Actes de naissance des deux époux',
