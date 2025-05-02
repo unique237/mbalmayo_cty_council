@@ -106,7 +106,7 @@ const ImageSlider: React.FC = () => {
   };
 
   return (
-    <div className="relative h-[calc(100vh-80px)] overflow-hidden">
+    <div className="relative h-[calc(100vh-80px)] overflow-hidden z-0">
       {/* Slides */}
       {slides.map((slide, index) => (
         <div
