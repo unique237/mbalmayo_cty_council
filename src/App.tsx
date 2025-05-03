@@ -4,6 +4,9 @@ import {
   Route,
   Navigate,
 } from "react-router-dom";
+
+import Loader from "./components/common/Loader";
+
 import { useTranslation } from "react-i18next";
 import Layout from "./components/Layout";
 import HomePage from "./pages/HomePage";
@@ -30,10 +33,25 @@ import "./i18n";
 
 //adding real robin.dev
 import { Robin } from "@real-robin/react";
+import { useEffect, useState } from "react";
 
 function App() {
   const { i18n } = useTranslation();
   const currentLang = i18n.language;
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate checking if all resources are loaded
+    window.onload = () => {
+      setTimeout(() => {
+        setIsLoading(false);
+      }, 1000); // Simulate a 1 second loading time
+    };
+  }, []);
+
+  if (isLoading) {
+    return <Loader />;
+  }
 
   return (
     <>
