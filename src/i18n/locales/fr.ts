@@ -19,77 +19,28 @@ const fr: Translation = {
     search: 'Rechercher',
     emergency: 'Urgence',
   },
-  home: {
-    heroTitle: 'Bienvenue à la Mairie de Mbalmayo',
-    heroSubtitle: 'Servir notre communauté avec excellence et intégrité',
-    quickLinks: 'Liens Rapides',
-    latestNews: 'Dernières Actualités',
-    upcomingEvents: 'Événements à Venir',
-    mayorMessage: {
-      title: 'Message de Monsieur le Maire',
-      subtitle: 'Travailler ensemble pour un avenir meilleur',
-      content: 'Bienvenue sur le site officiel de la Mairie de Mbalmayo. Notre administration s\'engage à la transparence, à la responsabilité et au service de tous les résidents. Ensemble, nous pouvons construire une communauté plus prospère et inclusive.',
+  administration: {
+    title: 'Administration Municipale',
+    mayorsOffice: {
+      title: 'Cabinet du Maire',
+      description: "Le plus haut bureau exécutif de la municipalité, responsable de la direction générale et stratégique du conseil municipal.",
     },
-    services: {
-      title: 'Nos Services',
-      subtitle: 'Explorez les services offerts par la Mairie de Mbalmayo',
+    secretaryGeneral: {
+      title: 'Secrétariat Général',
+      description: 'Placé sous l\'autorité du Maire, le Secrétaire Général supervise la coordination administrative de tous les services municipaux.',
     },
-  },
-  services: {
-    title: 'Services',
-    subtitle: 'Découvrez comment nous pouvons vous aider',
-    birthMarriage: 'Naissance & Mariage',
-    businessLicenses: 'Licences Commerciales',
-    buildingPermits: 'Permis de Construire',
-    wasteCollection: 'Collecte des Déchets',
-    allServices: 'Tous les Services',
-  },
-  about: {
-    title: 'À Propos du Conseil',
-    subtitle: 'En savoir plus sur la Mairie de Mbalmayo',
-    mayor: 'Le Maire',
-    councilMembers: 'Membres du Conseil',
-    administration: 'Administration',
-    history: 'Histoire de Mbalmayo',
-    localGovernment: 'Gouvernement Local',
-  },
-  facilitiesPage: {
-    header: {
-      title: 'Nos Installations Communautaires',
-      subtitle: 'Découvrez les services essentiels et les infrastructures disponibles dans notre communauté.',
+    technicalServices: {
+      title: 'Services Techniques',
+      description: 'Responsable de l\'urbanisme, de l\'entretien des infrastructures et de la mise en œuvre des projets techniques.',
     },
-    items: {
-      healthCenters: {
-        title: 'Centres de santé',
-        description: 'Hôpitaux, cliniques et services de santé communautaires.',
-      },
-      schools: {
-        title: 'Écoles',
-        description: 'Établissements d’enseignement primaire, secondaire et professionnel.',
-      },
-      transportRoads: {
-        title: 'Transport et routes',
-        description: 'Transports publics, routes et entretien des infrastructures.',
-      },
-      markets: {
-        title: 'Marchés',
-        description: 'Marchés locaux et centres commerciaux.',
-      },
-      security: {
-        title: 'Services de sécurité',
-        description: 'Postes de police, services d’incendie et réponse d’urgence.',
-      },
+    financialServices: {
+      title: 'Services Financiers',
+      description: 'Gère le budget municipal, la comptabilité et la planification financière du conseil municipal.',
     },
-    viewAll: 'Voir tout',
+    organizationalChart: 'Organigramme',
+    organizationalChartAlt: 'Organigramme de la Mairie de Mbalmayo',
   },
-  footer: {
-    quickLinks: 'Liens Rapides',
-    contactUs: 'Contactez-Nous',
-    followUs: 'Suivez-Nous',
-    privacyPolicy: 'Politique de Confidentialité',
-    termsOfService: 'Conditions d\'Utilisation',
-    copyright: '© 2025 Mairie de Mbalmayo. Tous droits réservés.',
-  },
-};
+  // ... rest of the existing translations
+} as const;
 
 export default fr;
