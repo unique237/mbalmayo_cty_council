@@ -17,28 +17,7 @@ export interface Translation {
     search: string;
     emergency: string;
   };
-  administration: {
-    title: string;
-    mayorsOffice: {
-      title: string;
-      description: string;
-    };
-    secretaryGeneral: {
-      title: string;
-      description: string;
-    };
-    technicalServices: {
-      title: string;
-      description: string;
-    };
-    financialServices: {
-      title: string;
-      description: string;
-    };
-    organizationalChart: string;
-    organizationalChartAlt: string;
-  };
-    home: {
+  home: {
     heroTitle: string;
     heroSubtitle: string;
     quickLinks: string;
