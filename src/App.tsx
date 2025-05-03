@@ -4,7 +4,7 @@ import {
   Routes,
   Route,
   Navigate,
-  useLocation,
+  useLocation
 } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import Loader from "./components/common/Loader";
