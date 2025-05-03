@@ -38,7 +38,7 @@ function App() {
   return (
     <>
       {/* Adding the Robin widget, to display it on my screen*/}
-      <div className="fixed bottom-4 right-4 z-[1000]">
+      <div className="fixed bottom-10 right-4 z-[1000]">
         <Robin apiKey="rr_ToC3poU6si3M6aBErjDzqqyJvE_uau1b" />
       </div>
       <Router>
