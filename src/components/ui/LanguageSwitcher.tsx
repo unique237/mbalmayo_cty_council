@@ -74,6 +74,7 @@ const LanguageSwitcher: React.FC = () => {
     >
       <Globe className="h-4 w-4" />
       <span className="hidden md:inline">{t('common.languageToggle')}</span>
+      <span className="md:hidden">{currentLang === 'en' ? 'FR' : 'EN'}</span>
     </button>
   );
 };
