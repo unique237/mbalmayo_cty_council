@@ -4,6 +4,7 @@ import {
   Routes,
   Route,
   Navigate,
+  useLocation,
 } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import Loader from "./components/common/Loader";
@@ -32,33 +33,24 @@ function App() {
   const { i18n } = useTranslation();
   const currentLang = i18n.language;
   const [isLoading, setIsLoading] = useState(true);
+  const location = useLocation();
 
   useEffect(() => {
-    // Simulate loading for initial page load
+    // Initial load
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 1000); // Adjust timeout as needed
-
-    // Cleanup timer on unmount
+    }, 1000);
     return () => clearTimeout(timer);
   }, []);
 
-  //  Add loading state for route changes
   useEffect(() => {
-    const handleRouteChange = () => {
-      setIsLoading(true);
-      setTimeout(() => {
-        setIsLoading(false);
-      }, 1000); // Simulate loading for route changes
-    };
-
-    // Listen to route changes 
-    window.addEventListener("popstate", handleRouteChange);
-
-    return () => {
-      window.removeEventListener("popstate", handleRouteChange);
-    };
-  }, []);
+    // Route change
+    setIsLoading(true);
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 1000);
+    return () => clearTimeout(timer);
+  }, [location.pathname]); // Trigger on route change
 
   if (isLoading) {
     return <Loader />;
