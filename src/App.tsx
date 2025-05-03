@@ -1,13 +1,12 @@
+import { useEffect, useState } from "react";
 import {
   BrowserRouter as Router,
   Routes,
   Route,
   Navigate,
 } from "react-router-dom";
-
-import Loader from "./components/common/Loader";
-
 import { useTranslation } from "react-i18next";
+import Loader from "./components/common/Loader";
 import Layout from "./components/Layout";
 import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
@@ -21,19 +20,13 @@ import SportsPage from "./pages/SportsPage";
 import MediaPage from "./pages/MediaPage";
 import ContactPage from "./pages/ContactPage";
 import NotFoundPage from "./pages/NotFoundPage";
-
 import BirthMarriage from "./pages/services/BirthMarriage";
 import BusinessLicenses from "./pages/services/BusinessLicenses";
 import BuildingPermits from "./pages/services/BuildingPermits";
 import WasteCollection from "./pages/services/WasteCollection";
-
 import History from "./pages/History";
-
-import "./i18n";
-
-//adding real robin.dev
 import { Robin } from "@real-robin/react";
-import { useEffect, useState } from "react";
+import "./i18n";
 
 function App() {
   const { i18n } = useTranslation();
@@ -41,11 +34,29 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Simulate checking if all resources are loaded
-    window.onload = () => {
+    // Simulate loading for initial page load
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 1000); // Adjust timeout as needed
+
+    // Cleanup timer on unmount
+    return () => clearTimeout(timer);
+  }, []);
+
+  //  Add loading state for route changes
+  useEffect(() => {
+    const handleRouteChange = () => {
+      setIsLoading(true);
       setTimeout(() => {
         setIsLoading(false);
-      }, 1000); // Simulate a 1 second loading time
+      }, 1000); // Simulate loading for route changes
+    };
+
+    // Listen to route changes 
+    window.addEventListener("popstate", handleRouteChange);
+
+    return () => {
+      window.removeEventListener("popstate", handleRouteChange);
     };
   }, []);
 
@@ -55,7 +66,6 @@ function App() {
 
   return (
     <>
-      {/* Adding the Robin widget, to display it on my screen*/}
       <div className="fixed bottom-10 right-4 z-[1000]">
         <Robin apiKey="rr_ToC3poU6si3M6aBErjDzqqyJvE_uau1b" />
       </div>
@@ -65,7 +75,6 @@ function App() {
             path="/"
             element={<Navigate to={`/${currentLang}/home`} replace />}
           />
-
           {/* English Routes */}
           <Route path="/en" element={<Navigate to="/en/home" replace />} />
           <Route path="/en/*" element={<Layout />}>
@@ -96,7 +105,6 @@ function App() {
             <Route path="contact" element={<ContactPage />} />
             <Route path="*" element={<NotFoundPage />} />
           </Route>
-
           {/* French Routes */}
           <Route path="/fr" element={<Navigate to="/fr/accueil" replace />} />
           <Route path="/fr/*" element={<Layout />}>
@@ -127,8 +135,6 @@ function App() {
             <Route path="contact" element={<ContactPage />} />
             <Route path="*" element={<NotFoundPage />} />
           </Route>
-
-          {/* Redirect any other language combinations to English */}
           <Route path="*" element={<Navigate to="/en/home" replace />} />
         </Routes>
       </Router>
