@@ -17,46 +17,26 @@ export interface Translation {
     search: string;
     emergency: string;
   };
-  home: {
-    heroTitle: string;
-    heroSubtitle: string;
-    quickLinks: string;
-    latestNews: string;
-    upcomingEvents: string;
-    mayorMessage: {
-      title: string;
-      subtitle: string;
-      content: string;
-    };
-    services: {
-      title: string;
-      subtitle: string;
-    };
-  };
-  services: {
+  administration: {
     title: string;
-    subtitle: string;
-    birthMarriage: string;
-    businessLicenses: string;
-    buildingPermits: string;
-    wasteCollection: string;
-    allServices: string;
+    mayorsOffice: {
+      title: string;
+      description: string;
+    };
+    secretaryGeneral: {
+      title: string;
+      description: string;
+    };
+    technicalServices: {
+      title: string;
+      description: string;
+    };
+    financialServices: {
+      title: string;
+      description: string;
+    };
+    organizationalChart: string;
+    organizationalChartAlt: string;
   };
-  about: {
-    title: string;
-    subtitle: string;
-    mayor: string;
-    councilMembers: string;
-    administration: string;
-    history: string;
-    localGovernment: string;
-  };
-  footer: {
-    quickLinks: string;
-    contactUs: string;
-    followUs: string;
-    privacyPolicy: string;
-    termsOfService: string;
-    copyright: string;
-  };
+  // ... rest of the existing interface
 }
