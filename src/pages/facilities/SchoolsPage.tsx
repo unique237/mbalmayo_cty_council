@@ -36,22 +36,22 @@ const SchoolsPage = () => {
     {
       id: "basic",
       name: currentLang === "en" ? "Basic Education" : "Éducation de Base",
-      icon: <BookOpen className="h-5 w-5" />,
+      icon: <BookOpen className="h-5 w-5 text-yellow-400" />,
     },
     {
       id: "secondary",
       name: currentLang === "en" ? "Secondary Education" : "Éducation Secondaire",
-      icon: <School className="h-5 w-5" />,
+      icon: <School className="h-5 w-5 text-green-500" />,
     },
     {
       id: "professional",
       name: currentLang === "en" ? "Vocational & Professional Education" : "Formation Professionnelle",
-      icon: <Building className="h-5 w-5" />,
+      icon: <Building className="h-5 w-5 text-blue-500" />,
     },
     {
       id: "higher",
       name: currentLang === "en" ? "Higher Education" : "Enseignement Supérieur",
-      icon: <GraduationCap className="h-5 w-5" />,
+      icon: <GraduationCap className="h-5 w-5 text-purple-600" />,
     },
   ];
 
@@ -295,7 +295,7 @@ const SchoolsPage = () => {
               onClick={() => setActiveCategory(category.id)}
               className={`flex items-center rounded-full px-6 py-2 text-sm font-medium transition-all duration-200 transform hover:scale-105 ${
                 activeCategory === category.id
-                  ? "bg-primary-600 text-white shadow-md"
+                  ? "bg-primary-100 text-white shadow-md"
                   : "bg-white text-neutral-700 hover:bg-neutral-100 border border-neutral-200"
               }`}
             >
