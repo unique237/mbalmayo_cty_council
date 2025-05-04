@@ -59,4 +59,18 @@ export interface Translation {
     termsOfService: string;
     copyright: string;
   };
+  facilitiesPage: {
+    healthCenters: {
+      title: string;
+      description: string;
+    }
+    header: {
+      title: string;
+      subtitle: string;
+    };
+    items: {
+      title: string;
+      description: string;
+    }[];
+  };
 }

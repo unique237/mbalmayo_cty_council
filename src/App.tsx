@@ -24,6 +24,9 @@ import BirthMarriage from "./pages/services/BirthMarriage";
 import BusinessLicenses from "./pages/services/BusinessLicenses";
 import BuildingPermits from "./pages/services/BuildingPermits";
 import WasteCollection from "./pages/services/WasteCollection";
+import HallRental from "./pages/services/HallRental";
+import Publicity from "./pages/services/Publicity";
+import KioskRental from "./pages/services/KioskRental";
 import History from "./pages/History";
 import { Robin } from "@real-robin/react";
 import "./i18n";
@@ -96,6 +99,9 @@ function App() {
               path="services/waste-collection"
               element={<WasteCollection />}
             />
+            <Route path="services/hall-rental" element={<HallRental />} />
+            <Route path="services/publicity" element={<Publicity />} />
+            <Route path="services/kiosk-rental" element={<KioskRental />} />
             <Route path="news" element={<NewsPage />} />
             <Route path="news/:id" element={<SingleNewsPage />} />
             <Route path="facilities/*" element={<FacilitiesPage />} />
@@ -126,6 +132,9 @@ function App() {
               path="services/waste-collection"
               element={<WasteCollection />}
             />
+            <Route path="services/hall-rental" element={<HallRental />} />
+            <Route path="services/publicity" element={<Publicity />} />
+            <Route path="services/kiosk-rental" element={<KioskRental />} />
             <Route path="actualites" element={<NewsPage />} />
             <Route path="actualites/:id" element={<SingleNewsPage />} />
             <Route path="installations/*" element={<FacilitiesPage />} />

@@ -5,6 +5,7 @@ import QuickServices from '../components/home/QuickServices';
 import MbalmayoShowcase from '../components/home/MbalmayoShowcase';
 import NewsHighlights from '../components/home/NewsHighlights';
 import MayorMessage from '../components/home/MayorMessage';
+import DiscoverMbyo from '../components/home/DiscoverMbyo';
 import EventsCalendar from '../components/home/EventsCalendar';
 
 const HomePage: React.FC = () => {
@@ -17,6 +18,7 @@ const HomePage: React.FC = () => {
       <MbalmayoShowcase />
       <NewsHighlights />
       <MayorMessage />
+      <DiscoverMbyo />
       <EventsCalendar />
     </div>
   );

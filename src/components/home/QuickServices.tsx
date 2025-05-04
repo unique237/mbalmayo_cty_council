@@ -16,9 +16,9 @@ const QuickServices: React.FC = () => {
     const routeMap: {[key: string]: string} = {
       'services': 'services',
       'services/birth-marriage': 'services/naissance-mariage',
-      'services/business-licenses': 'services/licences-commerciales',
-      'services/building-permits': 'services/permis-construire',
-      'services/waste-collection': 'services/collecte-dechets',
+      'services/business-licenses': 'services/business-licenses',
+      'services/building-permits': 'services/building-permits',
+      'services/waste-collection': 'services/waste-collection',
       'services/all': 'services/tous'
     };
     
@@ -40,7 +40,7 @@ const QuickServices: React.FC = () => {
       description: currentLang === 'en'
         ? 'Commercial permits and business registration services.'
         : 'Permis commerciaux et services d\'enregistrement des entreprises.',
-      icon: <Building className="h-10 w-10 text-secondary-600" />,
+      icon: <Building className="h-10 w-10 text-orange-500" />,
       path: 'services/business-licenses',
       color: 'bg-secondary-50'
     },

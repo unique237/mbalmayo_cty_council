@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { Building2, Store, Volume2, FileText, Home, Users } from 'lucide-react';
+import { Building2, Store, Volume2, FileText, Building, Users } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 interface ServiceCard {
@@ -65,12 +65,12 @@ const ServicesPage: React.FC = () => {
     },
     {
       id: 'housing',
-      icon: <Home className="h-6 w-6 text-orange-500" />,
+      icon: <Building className="h-6 w-6 text-orange-500" />,
       title: 'Housing Permits',
       titleFr: 'Permis de Construire',
       description: 'Apply for building permits and construction authorizations',
       descriptionFr: 'Demandez des permis de construire et des autorisations de construction',
-      link: `/${currentLang}/services/housing`,
+      link: `/${currentLang}/services/building-permits`,
     },
   ];
 
