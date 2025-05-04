@@ -14,11 +14,11 @@ const HomePage: React.FC = () => {
   return (
     <div>
       <Hero />
+      <DiscoverMbyo />
       <QuickServices />
       <MbalmayoShowcase />
       <NewsHighlights />
       <MayorMessage />
-      <DiscoverMbyo />
       <EventsCalendar />
     </div>
   );

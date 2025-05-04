@@ -11,6 +11,7 @@ import Layout from "./components/Layout";
 import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
 import MayorPage from "./pages/MayorPage";
+import CouncilMembers from "./pages/CouncilMembers";
 import ServicesPage from "./pages/ServicesPage";
 import NewsPage from "./pages/NewsPage";
 import SingleNewsPage from "./pages/SingleNewsPage";
@@ -84,6 +85,7 @@ function App() {
             <Route path="home" element={<HomePage />} />
             <Route path="about/*" element={<AboutPage />} />
             <Route path="about/mayor" element={<MayorPage />} />
+            <Route path="about/council-members" element={<CouncilMembers />} />
             <Route path="about/history" element={<History />} />
             <Route path="services/*" element={<ServicesPage />} />
             <Route path="services/birth-marriage" element={<BirthMarriage />} />
@@ -117,6 +119,7 @@ function App() {
             <Route path="accueil" element={<HomePage />} />
             <Route path="a-propos/*" element={<AboutPage />} />
             <Route path="a-propos/mayor" element={<MayorPage />} />
+            <Route path="a-propos/council-members" element={<CouncilMembers />} />
             <Route path="a-propos/history" element={<History />} />
             <Route path="services/*" element={<ServicesPage />} />
             <Route path="services/birth-marriage" element={<BirthMarriage />} />

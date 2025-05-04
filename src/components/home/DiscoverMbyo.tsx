@@ -43,7 +43,7 @@ const DiscoverMbyo = () => {
             </p>*/}
 
             <Link
-              to={currentLang === "en" ? "/en/about" : "/fr/a-propos"}
+              to={currentLang === "en" ? "/en/about/history" : "/fr/a-propos/history"}
               className="group inline-flex items-center text-lg font-medium text-primary-600 transition-colors hover:text-primary-700"
             >
               {currentLang === "en"
