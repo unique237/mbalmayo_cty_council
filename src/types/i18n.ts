@@ -16,6 +16,7 @@ export interface Translation {
     viewAll: string;
     search: string;
     emergency: string;
+    covidAlert: string;
   };
   home: {
     heroTitle: string;
