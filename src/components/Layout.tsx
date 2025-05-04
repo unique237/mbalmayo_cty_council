@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import Header from './layout/Header';
 import Footer from './layout/Footer';
 import EmergencyAlert from './ui/EmergencyAlert';
@@ -8,12 +9,16 @@ import BackToTop from './ui/BackToTop';
 const Layout: React.FC = () => {
   const [showEmergencyAlert, setShowEmergencyAlert] = useState(true);
   const location = useLocation();
+  const { i18n } = useTranslation();
+  const currentLang = i18n.language;
 
-  // Example emergency message (would come from CMS/API in real implementation)
+  // Bilingual emergency message
   const emergencyMessage = {
     active: true,
-    message: "COVID-19 Safety Measures in effect. Masks required in all city buildings.",
-    severity: "warning" // could be 'warning', 'critical', 'info'
+    message: currentLang === 'en'
+      ? "COVID-19 Safety Measures in effect. Masks required in all city buildings."
+      : "Mesures de sécurité COVID-19 en vigueur. Masques obligatoires dans tous les bâtiments municipaux.",
+    severity: "warning"
   };
   
   // Reset scroll position on route change
@@ -40,4 +45,4 @@ const Layout: React.FC = () => {
   );
 };
 
-export default Layout
+export default Layout;
