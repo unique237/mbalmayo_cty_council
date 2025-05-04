@@ -1,13 +1,14 @@
 import React from 'react';
 import { AlertTriangle, Info, AlertCircle, X } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 interface EmergencyAlertProps {
-  message: string;
   severity: string;
   onClose: () => void;
 }
 
-const EmergencyAlert: React.FC<EmergencyAlertProps> = ({ message, severity, onClose }) => {
+const EmergencyAlert: React.FC<EmergencyAlertProps> = ({ severity, onClose }) => {
+  const { t } = useTranslation();
   let bgColor = 'bg-accent-600';
   let icon = <AlertCircle className="h-5 w-5" />;
   
@@ -35,7 +36,7 @@ const EmergencyAlert: React.FC<EmergencyAlertProps> = ({ message, severity, onCl
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-3">
             {icon}
-            <p className="text-sm font-medium md:text-base">{message}</p>
+            <p className="text-sm font-medium md:text-base">{t('common.covidAlert')}</p>
           </div>
           <button 
             onClick={onClose}
