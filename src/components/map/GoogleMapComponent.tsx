@@ -15,16 +15,13 @@ const GoogleMapComponent: React.FC = () => {
   // Map container styling
   const containerStyle = {
     width: "100%",
-    height: "400px", // Fixed height instead of 100%
-    minHeight: "400px", // Ensure minimum height
+    height: "100%",
   };
 
   // Updated map options with slightly adjusted zoom
   const mapOptions = {
-    zoom: 16,
+    zoom: 16, // Increased zoom level for better visibility
     center: mapCenter,
-    gestureHandling: "cooperative", // Improved mobile handling
-    scrollwheel: false, // Prevent accidental zooming
   };
 
   // Marker label
@@ -37,35 +34,25 @@ const GoogleMapComponent: React.FC = () => {
   };
 
   return (
-    <div className="map-container relative w-full h-full">
-      <LoadScript googleMapsApiKey={import.meta.env.VITE_GOOGLE_MAPS_API_KEY}
-                  loadingElement={<div className="h-full w-full flex items-center justify-center">Loading map...</div>}>
-        <GoogleMap
-          mapContainerStyle={containerStyle}
-          center={mapCenter}
-          zoom={mapOptions.zoom}
-          options={{
-            ...mapOptions,
-            mapTypeControl: true,
-            streetViewControl: true,
-            fullscreenControl: true,
-            zoomControl: true,
-            mapTypeControlOptions: {
-              position: google.maps.ControlPosition.TOP_RIGHT,
-            },
-            zoomControlOptions: {
-              position: google.maps.ControlPosition.RIGHT_CENTER,
-            },
-          }}
-        >
-          <Marker
-            position={mapCenter}
-            label={markerLabel}
-            title={currentLang === "en" ? "Mbalmayo Town Hall" : "Hôtel de Ville de Mbalmayo"}
-          />
-        </GoogleMap>
+    <LoadScript googleMapsApiKey={import.meta.env.VITE_GOOGLE_MAPS_API_KEY}>
+      <GoogleMap
+        mapContainerStyle={containerStyle}
+        center={mapCenter}
+        zoom={mapOptions.zoom}
+        options={{
+          mapTypeControl: true, // Enabled map type control for better user experience
+          streetViewControl: true, // Enabled street view for better exploration
+          fullscreenControl: true,
+          zoomControl: true,
+        }}
+      >
+        <Marker
+          position={mapCenter}
+          label={markerLabel}
+          title={currentLang === "en" ? "Mbalmayo Town Hall" : "Hôtel de Ville de Mbalmayo"}
+        />
+      </GoogleMap>
     </LoadScript>
-    </div>
   );
 };
 
