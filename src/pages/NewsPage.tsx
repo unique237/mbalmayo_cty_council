@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
-import { Calendar, ArrowRight, Tag } from "lucide-react";
+import { Calendar, ArrowRight, Tag, Filter, X } from "lucide-react";
 import { format } from "date-fns";
 import { fr } from "date-fns/locale";
 import NewsSearch from "../components/news/NewsSearch";
@@ -10,6 +10,8 @@ const NewsPage: React.FC = () => {
   const { t, i18n } = useTranslation();
   const currentLang = i18n.language;
   const [searchQuery, setSearchQuery] = useState("");
+  const [activeCategories, setActiveCategories] = useState<string[]>([]);
+  const [showFilters, setShowFilters] = useState(false);
   const navigate = useNavigate();
 
   const getLocalizedPath = (path: string) => {
@@ -17,18 +19,19 @@ const NewsPage: React.FC = () => {
       return path;
     }
 
-    // Map English routes to French routes
     const routeMap: { [key: string]: string } = {
       news: "actualites",
       "news/1": "actualites/1",
       "news/2": "actualites/2",
       "news/3": "actualites/3",
+      "news/4": "actualites/4",
+      "news/5": "actualites/5",
     };
 
     return routeMap[path] || path;
   };
 
-  // Sample news data - in a real app, this would come from an API
+  // Sample news data with categories
   const newsItems = [
     {
       id: "1",
@@ -90,7 +93,71 @@ const NewsPage: React.FC = () => {
       category: currentLang === "en" ? "Events" : "Événements",
       author: "Events Department",
     },
+    {
+      id: "4",
+      title:
+        currentLang === "en"
+          ? "Local Football Tournament Scheduled"
+          : "Tournoi de football local programmé",
+      excerpt:
+        currentLang === "en"
+          ? "A local football tournament will take place next month, bringing together teams from across Mbalmayo."
+          : "Un tournoi de football local aura lieu le mois prochain, réunissant des équipes de tout Mbalmayo.",
+      content:
+        currentLang === "en"
+          ? "The tournament will feature youth and adult categories, with prizes for the winners..."
+          : "Le tournoi comprendra des catégories pour jeunes et adultes, avec des prix pour les gagnants...",
+      date: "2025-04-20",
+      image:
+        "https://res.cloudinary.com/dipmwyrfq/image/upload/v1746351445/Mbalmayo/egzged4ps8peruxwdyqh.jpg",
+      category: currentLang === "en" ? "Sports" : "Sports",
+      author: "Sports Department",
+    },
+    {
+      id: "5",
+      title:
+        currentLang === "en"
+          ? "New Economic Development Plan Unveiled"
+          : "Nouveau plan de développement économique dévoilé",
+      excerpt:
+        currentLang === "en"
+          ? "The city has unveiled a new plan to boost local businesses and attract investment."
+          : "La ville a dévoilé un nouveau plan pour stimuler les entreprises locales et attirer des investissements.",
+      content:
+        currentLang === "en"
+          ? "The plan includes tax incentives, infrastructure improvements, and support for small businesses..."
+          : "Le plan comprend des incitations fiscales, des améliorations des infrastructures et un soutien aux petites entreprises...",
+      date: "2025-04-01",
+      image:
+        "https://res.cloudinary.com/dipmwyrfq/image/upload/v1746351447/Mbalmayo/bjwjsp9woomqfqlcrv0a.jpg",
+      category: currentLang === "en" ? "Economy" : "Économie",
+      author: "Economic Development Department",
+    },
   ];
+
+  // Get unique categories for filters
+  const categories = [
+    currentLang === "en" ? "Announcements" : "Annonces",
+    currentLang === "en" ? "Events" : "Événements",
+    currentLang === "en" ? "Sports" : "Sports",
+    currentLang === "en" ? "Economy" : "Économie",
+    currentLang === "en" ? "Public Notices" : "Avis Publics",
+  ];
+
+  // Toggle category filter
+  const toggleCategory = (category: string) => {
+    if (activeCategories.includes(category)) {
+      setActiveCategories(activeCategories.filter((cat) => cat !== category));
+    } else {
+      setActiveCategories([...activeCategories, category]);
+    }
+  };
+
+  // Clear all filters
+  const clearFilters = () => {
+    setActiveCategories([]);
+    setShowFilters(false);
+  };
 
   const handleNewsClick = (newsId: string) => {
     navigate(`/${currentLang}/${getLocalizedPath(`news/${newsId}`)}`);
@@ -106,17 +173,29 @@ const NewsPage: React.FC = () => {
   };
 
   const filteredNews = useMemo(() => {
-    if (!searchQuery) return newsItems;
+    let filtered = newsItems;
 
-    const query = searchQuery.toLowerCase();
-    return newsItems.filter(
-      (item) =>
-        item.title.toLowerCase().includes(query) ||
-        item.excerpt.toLowerCase().includes(query) ||
-        item.content.toLowerCase().includes(query) ||
-        item.category.toLowerCase().includes(query)
-    );
-  }, [newsItems, searchQuery]);
+    // Apply search query filter
+    if (searchQuery) {
+      const query = searchQuery.toLowerCase();
+      filtered = filtered.filter(
+        (item) =>
+          item.title.toLowerCase().includes(query) ||
+          item.excerpt.toLowerCase().includes(query) ||
+          item.content.toLowerCase().includes(query) ||
+          item.category.toLowerCase().includes(query)
+      );
+    }
+
+    // Apply category filter
+    if (activeCategories.length > 0) {
+      filtered = filtered.filter((item) =>
+        activeCategories.includes(item.category)
+      );
+    }
+
+    return filtered;
+  }, [newsItems, searchQuery, activeCategories]);
 
   return (
     <div className="py-12 md:py-16">
@@ -125,18 +204,79 @@ const NewsPage: React.FC = () => {
           <h1 className="mb-6 text-3xl font-bold md:text-4xl">
             {t("navigation.news")}
           </h1>
-          <NewsSearch
-            searchQuery={searchQuery}
-            onSearchChange={setSearchQuery}
-          />
+          <div className="flex flex-col gap-4 md:flex-row md:items-center md:gap-6">
+            <div className="flex-1">
+              <NewsSearch
+                searchQuery={searchQuery}
+                onSearchChange={setSearchQuery}
+              />
+            </div>
+            <div className="w-full md:w-48">
+              <button
+                className="flex w-full items-center rounded-lg bg-white px-4 py-2 text-sm font-medium text-neutral-700 shadow-sm hover:bg-neutral-50"
+                onClick={() => setShowFilters(!showFilters)}
+              >
+                <Filter className="mr-2 h-4 w-4" />
+                {currentLang === "en" ? "Filter by Category" : "Filtrer par Catégorie"}
+                {activeCategories.length > 0 && (
+                  <span className="ml-2 rounded-full bg-primary-100 px-2 py-0.5 text-xs text-primary-800">
+                    {activeCategories.length}
+                  </span>
+                )}
+              </button>
+            </div>
+          </div>
         </div>
+
+        {/* Category filters */}
+        {showFilters && (
+          <div className="mb-8 rounded-lg bg-white p-4 shadow-sm">
+            <div className="flex items-center justify-between">
+              <h3 className="text-lg font-medium text-neutral-900">
+                {currentLang === "en" ? "Filter by Category" : "Filtrer par Catégorie"}
+              </h3>
+              {activeCategories.length > 0 && (
+                <button
+                  className="flex items-center text-sm text-neutral-500 hover:text-neutral-700"
+                  onClick={clearFilters}
+                >
+                  <X className="mr-1 h-4 w-4" />
+                  {currentLang === "en" ? "Clear Filters" : "Effacer les Filtres"}
+                </button>
+              )}
+            </div>
+            <div className="mt-4 flex flex-wrap gap-2">
+              {categories.map((category) => (
+                <button
+                  key={category}
+                  className={`rounded-full px-3 py-1 text-sm font-medium transition-colors ${
+                    activeCategories.includes(category)
+                      ? "bg-primary-100 text-primary-800"
+                      : "bg-neutral-100 text-neutral-600 hover:bg-neutral-200"
+                  }`}
+                  onClick={() => toggleCategory(category)}
+                >
+                  {category}
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
 
         {filteredNews.length === 0 ? (
           <div className="rounded-lg bg-neutral-100 p-8 text-center">
             <p className="text-lg text-neutral-600">
               {currentLang === "en"
-                ? "No news articles found matching your search."
-                : "Aucun article trouvé correspondant à votre recherche."}
+                ? "No news articles found matching your search or category."
+                : "Aucun article trouvé correspondant à votre recherche ou catégorie."}
+              {activeCategories.length > 0 && (
+                <button
+                  className="mt-4 rounded-md bg-primary-50 px-4 py-2 text-sm font-medium text-primary-700 hover:bg-primary-100"
+                  onClick={clearFilters}
+                >
+                  {currentLang === "en" ? "Clear all filters" : "Effacer tous les filtres"}
+                </button>
+              )}
             </p>
           </div>
         ) : (

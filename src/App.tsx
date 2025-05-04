@@ -28,6 +28,7 @@ import WasteCollection from "./pages/services/WasteCollection";
 import HallRental from "./pages/services/HallRental";
 import Publicity from "./pages/services/Publicity";
 import KioskRental from "./pages/services/KioskRental";
+import SchoolsPage from "./pages/facilities/SchoolsPage";
 import History from "./pages/History";
 import { Robin } from "@real-robin/react";
 import "./i18n";
@@ -107,6 +108,7 @@ function App() {
             <Route path="news" element={<NewsPage />} />
             <Route path="news/:id" element={<SingleNewsPage />} />
             <Route path="facilities/*" element={<FacilitiesPage />} />
+            <Route path="facilities/schools" element={<SchoolsPage />} />
             <Route path="events/*" element={<EventsPage />} />
             <Route path="sports/*" element={<SportsPage />} />
             <Route path="media/*" element={<MediaPage />} />
@@ -141,6 +143,7 @@ function App() {
             <Route path="actualites" element={<NewsPage />} />
             <Route path="actualites/:id" element={<SingleNewsPage />} />
             <Route path="installations/*" element={<FacilitiesPage />} />
+            <Route path="installations/ecoles" element={<SchoolsPage />} />
             <Route path="evenements/*" element={<EventsPage />} />
             <Route path="sports/*" element={<SportsPage />} />
             <Route path="mediatheque/*" element={<MediaPage />} />

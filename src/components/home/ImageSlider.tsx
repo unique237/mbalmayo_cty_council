@@ -72,7 +72,7 @@ const ImageSlider: React.FC = () => {
       }
     },
     {
-      image: 'https://res.cloudinary.com/dipmwyrfq/image/upload/v1745938764/ebogo-die-stille-und_orwfhb.jpg',
+      image: 'https://res.cloudinary.com/dipmwyrfq/image/upload/v1746351448/Mbalmayo/yg0uhq6ybpkzwzcmbmdl.jpg',
       title: currentLang === 'en' ? 'Community Development' : 'Développement Communautaire',
       subtitle: currentLang === 'en' ? 'Working together for progress' : 'Travailler ensemble pour le progrès',
       description: currentLang === 'en'
