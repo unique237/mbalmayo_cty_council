@@ -18,6 +18,7 @@ const fr: Translation = {
     viewAll: 'Voir Tout',
     search: 'Rechercher',
     emergency: 'Urgence',
+    covidAlert: 'Mesures de sécurité COVID-19 en vigueur. Masques obligatoires dans tous les bâtiments municipaux.',
   },
   home: {
     heroTitle: 'Bienvenue à la Mairie de Mbalmayo',
@@ -65,7 +66,7 @@ const fr: Translation = {
       },
       schools: {
         title: 'Écoles',
-        description: 'Établissements d’enseignement primaire, secondaire et professionnel.',
+        description: 'Établissements d'enseignement primaire, secondaire et professionnel.',
       },
       transportRoads: {
         title: 'Transport et routes',
@@ -77,7 +78,7 @@ const fr: Translation = {
       },
       security: {
         title: 'Services de sécurité',
-        description: 'Postes de police, services d’incendie et réponse d’urgence.',
+        description: 'Postes de police, services d'incendie et réponse d'urgence.',
       },
     },
     viewAll: 'Voir tout',
