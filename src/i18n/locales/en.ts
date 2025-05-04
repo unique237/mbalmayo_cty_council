@@ -18,6 +18,7 @@ const en: Translation = {
     viewAll: 'View All',
     search: 'Search',
     emergency: 'Emergency',
+    covidAlert: 'COVID-19 Safety Measures in effect. Masks required in all city buildings.',
   },
   home: {
     heroTitle: 'Welcome to Mbalmayo City Council',
