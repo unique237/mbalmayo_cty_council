@@ -191,7 +191,7 @@ const ContactPage: React.FC = () => {
 
         {/* Map */}
         <div className="mt-12 overflow-hidden rounded-lg bg-white shadow-md">
-          <div className="h-[400px] w-full relative">
+          <div className="aspect-[16/9] w-full h-1/2">
             <GoogleMapComponent />
           </div>
         </div>
