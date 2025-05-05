@@ -62,7 +62,7 @@ const CouncilMembers = () => {
           <img
             src="https://res.cloudinary.com/dipmwyrfq/image/upload/v1746444878/Screenshot_2025-05-05_115617_wgmq4n.png"
             alt="Mbalmayo City Council"
-            className="h-[400px] w-full object-cover"
+            className="h-[400px] w-full object-fill"
           />
         </div>
 
