@@ -147,7 +147,7 @@ const Header: React.FC = () => {
     className="h-8 w-8 object-contain"
   />
   <span className="font-serif text-lg font-semibold text-primary-800 md:text-xl lg:text-2xl">
-    {currentLang === 'en' ? 'Mbalmayo Municipality' : 'Commune de Mbalmayo'}
+    {currentLang === 'en' ? 'Mbalmayo Council' : 'Commune de Mbalmayo'}
   </span>
 </Link>
 

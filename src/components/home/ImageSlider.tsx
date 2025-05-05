@@ -37,7 +37,7 @@ const ImageSlider: React.FC = () => {
   const slides = [
     {
       image: 'https://res.cloudinary.com/dipmwyrfq/image/upload/v1745938334/Mbalmayo_Camerounactuel.com__x5w8cu.jpg',
-      title: currentLang === 'en' ? 'Welcome to Mbalmayo City Council' : 'Bienvenue à la Mairie de Mbalmayo',
+      title: currentLang === 'en' ? 'Welcome to Mbalmayo Council' : 'Bienvenue à la Commune de Mbalmayo',
       subtitle: currentLang === 'en' ? 'Serving our community with excellence' : 'Servir notre communauté avec excellence',
       description: currentLang === 'en'
         ? 'Explore our initiatives, services, and commitment to improving the lives of our residents.'
