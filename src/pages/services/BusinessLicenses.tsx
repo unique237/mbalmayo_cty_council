@@ -5,6 +5,12 @@ const BusinessLicenses = () => {
   const { t, i18n } = useTranslation();
   const currentLang = i18n.language;
 
+  const formatPrice = (price: number) => {
+    return currentLang === 'en' 
+      ? price.toLocaleString('en-US')
+      : price.toLocaleString('fr-FR').replace(',', ' ');
+  };
+
   const licenses = [
     {
       id: 'trading',
@@ -16,14 +22,14 @@ const BusinessLicenses = () => {
             'Proof of business location (rent contract or property deed)',
             'Two passport-size photos',
             'Tax payer\'s card',
-            'Processing fee of 25000 FCFA'
+            `Processing fee of ${formatPrice(25000)} FCFA`
           ]
         : [
             'Carte nationale d\'identité valide (original et copie)',
             'Preuve de localisation de l\'entreprise (contrat de bail ou titre de propriété)',
             'Deux photos format passeport',
             'Carte de contribuable',
-            'Frais de traitement de 25000 FCFA'
+            `Frais de traitement de ${formatPrice(25000)} FCFA`
           ],
       timeline: currentLang === 'en' ? '5-7 working days' : '5-7 jours ouvrables',
       notes: currentLang === 'en' 
@@ -40,14 +46,14 @@ const BusinessLicenses = () => {
             'Environmental impact assessment (if applicable)',
             'Fire safety certificate',
             'Location plan and building permit',
-            'Processing fee of 50000 FCFA'
+            `Processing fee of ${formatPrice(50000)} FCFA`
           ]
         : [
             'Certificat d\'immatriculation de l\'entreprise',
             'Étude d\'impact environnemental (le cas échéant)',
             'Certificat de sécurité incendie',
             'Plan de localisation et permis de construire',
-            'Frais de traitement de 50000 FCFA'
+            `Frais de traitement de ${formatPrice(50000)} FCFA`
           ],
       timeline: currentLang === 'en' ? '10-15 working days' : '10-15 jours ouvrables',
       notes: currentLang === 'en'
