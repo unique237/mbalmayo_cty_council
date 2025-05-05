@@ -60,7 +60,7 @@ const CouncilMembers = () => {
         {/* Featured Image */}
         <div className="mb-12 overflow-hidden rounded-lg">
           <img
-            src="https://res.cloudinary.com/dipmwyrfq/image/upload/v1746046869/hotel-de-ville_mg3z2j.jpg"
+            src="https://res.cloudinary.com/dipmwyrfq/image/upload/v1746444878/Screenshot_2025-05-05_115617_wgmq4n.png"
             alt="Mbalmayo City Council"
             className="h-[400px] w-full object-cover"
           />
