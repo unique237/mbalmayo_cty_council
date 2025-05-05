@@ -1,6 +1,6 @@
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import { Calendar, ArrowRight, Tag, Filter, X } from "lucide-react";
 import { format } from "date-fns";
 import { fr } from "date-fns/locale";
@@ -9,9 +9,12 @@ import NewsSearch from "../components/news/NewsSearch";
 const NewsPage: React.FC = () => {
   const { t, i18n } = useTranslation();
   const currentLang = i18n.language;
-  const [searchQuery, setSearchQuery] = useState("");
+  const [searchParams, setSearchParams] = useSearchParams();
+  const initialSearch = searchParams.get("search") || "";
+  const [searchQuery, setSearchQuery] = useState(initialSearch);
   const [activeCategories, setActiveCategories] = useState<string[]>([]);
   const [showFilters, setShowFilters] = useState(false);
+  //const [searchQuery, setSearchQuery] = useState(initialSearch) handleSearch
   const navigate = useNavigate();
 
   const getLocalizedPath = (path: string) => {
@@ -30,6 +33,20 @@ const NewsPage: React.FC = () => {
 
     return routeMap[path] || path;
   };
+  // Handle search query change
+  const handleSearchChange= (value: string) => {
+    setSearchQuery(value);
+    setSearchParams(value ? {search: value} : {});
+  }
+
+  //useEffect
+  useEffect(() => {
+    const searchParam = searchParams.get("search");
+    if (searchParam !== searchQuery) {
+      setSearchQuery(searchParam || "");
+    }
+  }, [searchParams]);
+
 
   // Sample news data with categories
   const newsItems = [
@@ -208,7 +225,7 @@ const NewsPage: React.FC = () => {
             <div className="flex-1">
               <NewsSearch
                 searchQuery={searchQuery}
-                onSearchChange={setSearchQuery}
+                onSearchChange={handleSearchChange}
               />
             </div>
             <div className="w-full md:w-48">

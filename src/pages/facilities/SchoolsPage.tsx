@@ -342,7 +342,7 @@ const SchoolsPage = () => {
                     <span>{school.contact.Printer}</span>
                   </div>
                   <div className="flex items-center">
-                    <MapPin className="mr-2 h-4 w-4 text-primary-600" />
+                    <MapPin className="mr-2 h-4 w-4 text-green-500" />
                     <span>{school.contact.location}</span>
                   </div>
                 </div>

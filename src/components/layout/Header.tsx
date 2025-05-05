@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate, useSearchParams } from 'react-router-dom';
 import { ChevronDown, Menu, X, Search } from 'lucide-react';
 import LanguageSwitcher from '../ui/LanguageSwitcher';
 
@@ -13,6 +13,7 @@ const Header: React.FC = () => {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [searchParams, setSearchParams] = useSearchParams();
 
   const currentLang = i18n.language;
 
@@ -48,8 +49,23 @@ const Header: React.FC = () => {
       navigate(`/${currentLang}/${getLocalizedPath('news')}?search=${encodeURIComponent(searchQuery.trim())}`);
       setSearchQuery('');
       setIsSearchOpen(false);
+      setMobileMenuOpen(false);
     }
   };
+
+    // Add useEffect to sync search query with URL params when on news page
+    useEffect(() => {
+      const currentPath = location.pathname.split('/').slice(2).join('/');
+      const searchParam = searchParams.get('search');
+      
+      if (currentPath === 'news' || currentPath === getLocalizedPath('news')) {
+        if (searchParam) {
+          setSearchQuery(searchParam);
+        }
+      }
+    }, [location.pathname, searchParams]);
+
+
 
   const toggleSearch = () => {
     setIsSearchOpen(!isSearchOpen);
