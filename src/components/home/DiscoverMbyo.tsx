@@ -1,11 +1,54 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Briefcase, Building2, Map, Image } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const DiscoverMbyo = () => {
   const { t, i18n } = useTranslation();
   const currentLang = i18n.language;
+
+  const cards = [
+    {
+      icon: Briefcase,
+      title: currentLang === "en" ? "Job Opportunities" : "Offres d'emploi",
+      description:
+        currentLang === "en"
+          ? "Explore available jobs and internships in Mbalmayo City Council and partner organizations."
+          : "Découvrez les emplois et stages disponibles à la Mairie de Mbalmayo et dans les organisations partenaires.",
+      link: currentLang === "en" ? "/en/jobs" : "/fr/emplois",
+      color: "text-blue-600",
+    },
+    {
+      icon: Building2,
+      title: currentLang === "en" ? "Procurements" : "Marchés publics",
+      description:
+        currentLang === "en"
+          ? "Access information about current tenders, contracts, and procurement opportunities."
+          : "Accédez aux informations sur les appels d'offres, contrats et opportunités de marchés publics.",
+      link: currentLang === "en" ? "/en/procurements" : "/fr/marches-publics",
+      color: "text-green-600",
+    },
+    {
+      icon: Map,
+      title: currentLang === "en" ? "Relocation Procedures" : "Procédures de déménagement",
+      description:
+        currentLang === "en"
+          ? "Learn about the steps and requirements for relocating to Mbalmayo."
+          : "Informez-vous sur les étapes et exigences pour s'installer à Mbalmayo.",
+      link: currentLang === "en" ? "/en/relocation" : "/fr/demenagement",
+      color: "text-orange-600",
+    },
+    {
+      icon: Image,
+      title: currentLang === "en" ? "Gallery" : "Galerie",
+      description:
+        currentLang === "en"
+          ? "Discover Mbalmayo through our collection of photos and videos showcasing city life."
+          : "Découvrez Mbalmayo à travers notre collection de photos et vidéos illustrant la vie citadine.",
+      link: currentLang === "en" ? "/en/gallery" : "/fr/galerie",
+      color: "text-purple-600",
+    },
+  ];
 
   return (
     <section className="bg-white py-16">
@@ -44,13 +87,34 @@ const DiscoverMbyo = () => {
 
             <Link
               to={currentLang === "en" ? "/en/about/history" : "/fr/a-propos/history"}
-              className="group inline-flex items-center text-lg font-medium text-primary-600 transition-colors hover:text-primary-700"
+              className="group mb-8 inline-flex items-center text-lg font-medium text-primary-600 transition-colors hover:text-primary-700"
             >
               {currentLang === "en"
                 ? "Learn more about our city"
                 : "En savoir plus sur notre ville"}
               <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
             </Link>
+
+            {/* Cards Grid */}
+            <div className="grid grid-cols-2 gap-4">
+              {cards.map((card, index) => (
+                <div
+                  key={index}
+                  className="rounded-lg bg-gray-50 p-4 shadow-sm transition-all hover:shadow-md"
+                >
+                  <card.icon className={`h-6 w-6 ${card.color}`} />
+                  <h3 className="mt-3 text-lg font-semibold">{card.title}</h3>
+                  <p className="mt-2 text-sm text-gray-600">{card.description}</p>
+                  <Link
+                    to={card.link}
+                    className="group mt-3 inline-flex items-center text-sm font-medium text-primary-600 transition-colors hover:text-primary-700"
+                  >
+                    {currentLang === "en" ? "View more" : "Voir plus"}
+                    <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </Link>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
