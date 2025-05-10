@@ -32,7 +32,7 @@ const SecurityServicesPage = () => {
   const categories = [
     {
       id: "police",
-      name: currentLang === "en" ? "Police Stations" : "Postes de Police",
+      name: currentLang === "en" ? "Police Stations" : "Commissariats",
       icon: <Shield className="h-5 w-5 text-blue-500" />,
     },
     {
@@ -52,13 +52,13 @@ const SecurityServicesPage = () => {
     {
       id: 1,
       category: "police",
-      name: "Commissariat Central de Mbalmayo",
-      nameEn: "Mbalmayo Central Police Station",
+      name: "Commissariat Central",
+      nameEn: "Central Police Station",
       description:
         currentLang === "en"
-          ? "Main police station serving the central district with 24/7 operations."
-          : "Commissariat principal desservant le district central avec des opérations 24h/24.",
-      type: currentLang === "en" ? "Central Station" : "Commissariat Central",
+          ? "Main police station serving central Mbalmayo with 24/7 operations."
+          : "Commissariat principal desservant le centre de Mbalmayo avec des opérations 24/7.",
+      type: currentLang === "en" ? "Police Station" : "Commissariat",
       services: currentLang === "en" ? "General Police Services, Investigations" : "Services de Police Généraux, Enquêtes",
       image: "/images/security/central-police.jpg",
       contact: {
@@ -70,17 +70,17 @@ const SecurityServicesPage = () => {
     {
       id: 2,
       category: "police",
-      name: "Poste de Police du Quartier Nord",
-      nameEn: "North District Police Station",
+      name: "Commissariat du 2ème Arrondissement",
+      nameEn: "2nd District Police Station",
       description:
         currentLang === "en"
-          ? "Police station covering the northern residential areas of Mbalmayo."
-          : "Poste de police couvrant les zones résidentielles du nord de Mbalmayo.",
-      type: currentLang === "en" ? "District Station" : "Poste de District",
-      services: currentLang === "en" ? "Community Policing, Patrols" : "Police de Proximité, Patrouilles",
-      image: "/images/security/north-police.jpg",
+          ? "District police station covering the northern sector of Mbalmayo."
+          : "Commissariat de district couvrant le secteur nord de Mbalmayo.",
+      type: currentLang === "en" ? "District Station" : "Commissariat de District",
+      services: currentLang === "en" ? "Local Policing, Community Services" : "Police de Proximité, Services Communautaires",
+      image: "/images/security/district-police.jpg",
       contact: {
-        email: "north.police@mbalmayo.cm",
+        email: "district2.police@mbalmayo.cm",
         phone: "+237 677 333 444",
         location: currentLang === "en" ? "North Mbalmayo" : "Mbalmayo Nord",
       },
@@ -93,10 +93,10 @@ const SecurityServicesPage = () => {
       nameEn: "Main Gendarmerie Brigade",
       description:
         currentLang === "en"
-          ? "Primary gendarmerie unit responsible for territorial security and major operations."
-          : "Unité principale de gendarmerie responsable de la sécurité territoriale et des opérations majeures.",
+          ? "Primary gendarmerie unit responsible for territorial security and rural areas."
+          : "Unité principale de gendarmerie responsable de la sécurité territoriale et des zones rurales.",
       type: currentLang === "en" ? "Main Brigade" : "Brigade Principale",
-      services: currentLang === "en" ? "Territorial Security, Special Operations" : "Sécurité Territoriale, Opérations Spéciales",
+      services: currentLang === "en" ? "Territorial Security, Rural Patrols" : "Sécurité Territoriale, Patrouilles Rurales",
       image: "/images/security/main-gendarmerie.jpg",
       contact: {
         email: "gendarmerie.main@mbalmayo.cm",
@@ -107,19 +107,19 @@ const SecurityServicesPage = () => {
     {
       id: 4,
       category: "gendarmerie",
-      name: "Brigade de Gendarmerie Mobile",
-      nameEn: "Mobile Gendarmerie Brigade",
+      name: "Brigade de Recherche",
+      nameEn: "Investigation Brigade",
       description:
         currentLang === "en"
-          ? "Specialized mobile unit for rapid intervention and rural area security."
-          : "Unité mobile spécialisée pour l'intervention rapide et la sécurité des zones rurales.",
-      type: currentLang === "en" ? "Mobile Unit" : "Unité Mobile",
-      services: currentLang === "en" ? "Rapid Response, Rural Patrols" : "Intervention Rapide, Patrouilles Rurales",
-      image: "/images/security/mobile-gendarmerie.jpg",
+          ? "Specialized gendarmerie unit focusing on criminal investigations and intelligence."
+          : "Unité spécialisée de gendarmerie axée sur les enquêtes criminelles et le renseignement.",
+      type: currentLang === "en" ? "Special Unit" : "Unité Spéciale",
+      services: currentLang === "en" ? "Criminal Investigation, Intelligence" : "Enquête Criminelle, Renseignement",
+      image: "/images/security/investigation-brigade.jpg",
       contact: {
-        email: "gendarmerie.mobile@mbalmayo.cm",
+        email: "investigation.brigade@mbalmayo.cm",
         phone: "+237 677 777 888",
-        location: currentLang === "en" ? "West Mbalmayo" : "Mbalmayo Ouest",
+        location: currentLang === "en" ? "South Mbalmayo" : "Mbalmayo Sud",
       },
     },
     // Municipal Police
@@ -130,15 +130,15 @@ const SecurityServicesPage = () => {
       nameEn: "Mbalmayo Municipal Police",
       description:
         currentLang === "en"
-          ? "City law enforcement unit focusing on urban security and municipal regulations."
-          : "Unité de police municipale concentrée sur la sécurité urbaine et les règlements municipaux.",
+          ? "City law enforcement unit ensuring public order and municipal regulations compliance."
+          : "Unité de police municipale assurant l'ordre public et le respect des règlements municipaux.",
       type: currentLang === "en" ? "Municipal Force" : "Force Municipale",
-      services: currentLang === "en" ? "Urban Security, Traffic Control" : "Sécurité Urbaine, Contrôle de la Circulation",
+      services: currentLang === "en" ? "Public Order, Municipal Regulations" : "Ordre Public, Règlements Municipaux",
       image: "/images/security/municipal-police.jpg",
       contact: {
         email: "municipal.police@mbalmayo.cm",
         phone: "+237 677 999 000",
-        location: currentLang === "en" ? "City Hall District" : "Quartier de l'Hôtel de Ville",
+        location: currentLang === "en" ? "City Hall Complex" : "Complexe de l'Hôtel de Ville",
       },
     },
   ];
@@ -179,7 +179,7 @@ const SecurityServicesPage = () => {
                 key={facility.id}
                 className="rounded-xl bg-white p-6 shadow-sm transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
               >
-                <div className="mb-4 aspect-video w-full overflow-hidden rounded-lg">
+                <div className="mb-4 aspect-video overflow-hidden rounded-lg">
                   <img
                     src={facility.image}
                     alt={currentLang === "en" ? facility.nameEn : facility.name}
