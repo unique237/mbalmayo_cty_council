@@ -8,7 +8,7 @@ import {
   MapPin,
   Car,
   Bus,
-  Road,
+  TrafficCone,
   Truck
 } from "lucide-react";
 
@@ -35,7 +35,7 @@ const TransportRoadsPage = () => {
     {
       id: "roads",
       name: currentLang === "en" ? "Major Roads" : "Routes Principales",
-      icon: <Road className="h-5 w-5 text-yellow-400" />,
+      icon: <TrafficCone className="h-5 w-5 text-yellow-400" />,
     },
     {
       id: "public",

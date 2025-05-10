@@ -8,7 +8,7 @@ import {
   MapPin,
   Building,
   Heart,
-  FirstAid,
+  Cross,
   Stethoscope,
 } from "lucide-react";
 
@@ -22,7 +22,7 @@ const HealthCentersPage = () => {
   // Handle language change to stay on Health Centers page
   useEffect(() => {
     const getLocalizedPath = () => {
-      return currentLang === "en" ? "/en/facilities/centres-sante" : "/fr/installations/centres-sante";
+      return currentLang === "en" ? "/en/facilities/health-centers" : "/fr/installations/centres-sante";
     };
 
     const expectedPath = getLocalizedPath();
@@ -45,7 +45,7 @@ const HealthCentersPage = () => {
     {
       id: "healthcenters",
       name: currentLang === "en" ? "Health Centers" : "Centres de Santé",
-      icon: <FirstAid className="h-5 w-5 text-green-500" />,
+      icon: <Cross className="h-5 w-5 text-green-500" />,
     },
   ];
 

@@ -10,7 +10,7 @@ const ROUTE_MAP: { [key: string]: { en: string; fr: string } } = {
   schools: { en: 'facilities/schools', fr: 'installations/ecoles' },
   transportRoads: { en: 'facilities/transport-roads', fr: 'installations/transport-routes' },
   markets: { en: 'facilities/markets', fr: 'installations/marches' },
-  security: { en: 'facilities/security', fr: 'installations/securite' },
+  security: { en: 'facilities/security-services', fr: 'installations/services-securite' },
   all: { en: 'facilities/all', fr: 'installations/tous' },
 };
 

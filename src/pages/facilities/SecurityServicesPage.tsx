@@ -60,7 +60,7 @@ const SecurityServicesPage = () => {
           : "Commissariat principal desservant le district central avec des opérations 24h/24.",
       type: currentLang === "en" ? "Central Station" : "Commissariat Central",
       services: currentLang === "en" ? "General Police Services, Investigations" : "Services de Police Généraux, Enquêtes",
-      image: "/images/security/central-police.jpg",
+      image: "https://res.cloudinary.com/dipmwyrfq/image/upload/v1746351445/Mbalmayo/b6fp5ep3kb3cj2yxahv9.jpg",
       contact: {
         email: "central.police@mbalmayo.cm",
         phone: "+237 677 111 222",
@@ -78,7 +78,7 @@ const SecurityServicesPage = () => {
           : "Poste de police couvrant les zones résidentielles du nord de Mbalmayo.",
       type: currentLang === "en" ? "District Station" : "Poste de District",
       services: currentLang === "en" ? "Community Policing, Patrols" : "Police de Proximité, Patrouilles",
-      image: "/images/security/north-police.jpg",
+      image: "https://res.cloudinary.com/dipmwyrfq/image/upload/v1746351445/Mbalmayo/b6fp5ep3kb3cj2yxahv9.jpg",
       contact: {
         email: "north.police@mbalmayo.cm",
         phone: "+237 677 333 444",
@@ -97,7 +97,7 @@ const SecurityServicesPage = () => {
           : "Unité principale de gendarmerie responsable de la sécurité territoriale et des opérations majeures.",
       type: currentLang === "en" ? "Main Brigade" : "Brigade Principale",
       services: currentLang === "en" ? "Territorial Security, Special Operations" : "Sécurité Territoriale, Opérations Spéciales",
-      image: "/images/security/main-gendarmerie.jpg",
+      image: "https://res.cloudinary.com/dipmwyrfq/image/upload/v1746351445/Mbalmayo/b6fp5ep3kb3cj2yxahv9.jpg",
       contact: {
         email: "gendarmerie.main@mbalmayo.cm",
         phone: "+237 677 555 666",
@@ -115,7 +115,7 @@ const SecurityServicesPage = () => {
           : "Unité mobile spécialisée pour l'intervention rapide et la sécurité des zones rurales.",
       type: currentLang === "en" ? "Mobile Unit" : "Unité Mobile",
       services: currentLang === "en" ? "Rapid Response, Rural Patrols" : "Intervention Rapide, Patrouilles Rurales",
-      image: "/images/security/mobile-gendarmerie.jpg",
+      image: "https://res.cloudinary.com/dipmwyrfq/image/upload/v1746351445/Mbalmayo/b6fp5ep3kb3cj2yxahv9.jpg",
       contact: {
         email: "gendarmerie.mobile@mbalmayo.cm",
         phone: "+237 677 777 888",
@@ -134,7 +134,7 @@ const SecurityServicesPage = () => {
           : "Unité de police municipale concentrée sur la sécurité urbaine et les règlements municipaux.",
       type: currentLang === "en" ? "Municipal Force" : "Force Municipale",
       services: currentLang === "en" ? "Urban Security, Traffic Control" : "Sécurité Urbaine, Contrôle de la Circulation",
-      image: "/images/security/municipal-police.jpg",
+      image: "https://res.cloudinary.com/dipmwyrfq/image/upload/v1746351445/Mbalmayo/b6fp5ep3kb3cj2yxahv9.jpg",
       contact: {
         email: "municipal.police@mbalmayo.cm",
         phone: "+237 677 999 000",

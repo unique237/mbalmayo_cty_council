@@ -29,6 +29,10 @@ import HallRental from "./pages/services/HallRental";
 import Publicity from "./pages/services/Publicity";
 import KioskRental from "./pages/services/KioskRental";
 import SchoolsPage from "./pages/facilities/SchoolsPage";
+import MarketsPage from "./pages/facilities/MarketsPage";
+import TransportRoadsPage from "./pages/facilities/TransportRoadsPage";
+import SecurityServicesPage from "./pages/facilities/SecurityServicesPage";
+import HealthCentersPage from "./pages/facilities/HealthCentersPage";
 import History from "./pages/History";
 import { Robin } from "@real-robin/react";
 import "./i18n";
@@ -109,6 +113,19 @@ function App() {
             <Route path="news/:id" element={<SingleNewsPage />} />
             <Route path="facilities/*" element={<FacilitiesPage />} />
             <Route path="facilities/schools" element={<SchoolsPage />} />
+            <Route path="facilities/markets" element={<MarketsPage />} />
+            <Route
+              path="facilities/transport-roads"
+              element={<TransportRoadsPage />}
+            />
+            <Route
+              path="facilities/security-services"
+              element={<SecurityServicesPage />}
+            />
+            <Route
+              path="facilities/health-centers"
+              element={<HealthCentersPage />}
+            />
             <Route path="events/*" element={<EventsPage />} />
             <Route path="sports/*" element={<SportsPage />} />
             <Route path="media/*" element={<MediaPage />} />
@@ -144,6 +161,19 @@ function App() {
             <Route path="actualites/:id" element={<SingleNewsPage />} />
             <Route path="installations/*" element={<FacilitiesPage />} />
             <Route path="installations/ecoles" element={<SchoolsPage />} />
+            <Route path="installations/marches" element={<MarketsPage />} />
+            <Route
+              path="installations/transport-routes"
+              element={<TransportRoadsPage />}
+            />
+            <Route
+              path="installations/services-securite"
+              element={<SecurityServicesPage />}
+            />
+            <Route
+              path="installations/centres-sante"
+              element={<HealthCentersPage />}
+            />
             <Route path="evenements/*" element={<EventsPage />} />
             <Route path="sports/*" element={<SportsPage />} />
             <Route path="mediatheque/*" element={<MediaPage />} />
