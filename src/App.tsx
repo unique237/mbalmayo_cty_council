@@ -17,6 +17,7 @@ import NewsPage from "./pages/NewsPage";
 import SingleNewsPage from "./pages/SingleNewsPage";
 import FacilitiesPage from "./pages/FacilitiesPage";
 import EventsPage from "./pages/EventsPage";
+import SingleEventPage from "./pages/SingleEventPage";
 import SportsPage from "./pages/SportsPage";
 import MediaPage from "./pages/MediaPage";
 import ContactPage from "./pages/ContactPage";
@@ -33,6 +34,9 @@ import MarketsPage from "./pages/facilities/MarketsPage";
 import TransportRoadsPage from "./pages/facilities/TransportRoadsPage";
 import SecurityServicesPage from "./pages/facilities/SecurityServicesPage";
 import HealthCentersPage from "./pages/facilities/HealthCentersPage";
+import Jobs from "./pages/opportunities/Jobs";
+import Internships from "./pages/opportunities/Internships";
+import Tenders from "./pages/opportunities/Tenders";
 import History from "./pages/History";
 import { Robin } from "@real-robin/react";
 import "./i18n";
@@ -127,9 +131,14 @@ function App() {
               element={<HealthCentersPage />}
             />
             <Route path="events/*" element={<EventsPage />} />
+            <Route path="events/:id" element={<SingleEventPage />} />
             <Route path="sports/*" element={<SportsPage />} />
             <Route path="media/*" element={<MediaPage />} />
             <Route path="contact" element={<ContactPage />} />
+            {/* Opportunities */}
+            <Route path="jobs/*" element={<Jobs />} />
+            <Route path="internships" element={<Internships />} />
+            <Route path="tenders" element={<Tenders />} />
             <Route path="*" element={<NotFoundPage />} />
           </Route>
           {/* French Routes */}
@@ -175,9 +184,15 @@ function App() {
               element={<HealthCentersPage />}
             />
             <Route path="evenements/*" element={<EventsPage />} />
+            <Route path="evenements/:id" element={<SingleEventPage />} />
             <Route path="sports/*" element={<SportsPage />} />
             <Route path="mediatheque/*" element={<MediaPage />} />
             <Route path="contact" element={<ContactPage />} />
+            {/* Opportunities */}
+            <Route path="emplois/*" element={<Jobs />} />
+            <Route path="stages" element={<Internships />} />
+            <Route path="appels-d-offres" element={<Tenders />} />
+            <Route path="*" element={<NotFoundPage />} />
             <Route path="*" element={<NotFoundPage />} />
           </Route>
           <Route path="*" element={<Navigate to="/en/home" replace />} />

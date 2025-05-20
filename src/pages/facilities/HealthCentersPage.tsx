@@ -20,7 +20,7 @@ const HealthCentersPage = () => {
   const location = useLocation();
 
   // Handle language change to stay on Health Centers page
-  useEffect(() => {
+ useEffect(() => {
     const getLocalizedPath = () => {
       return currentLang === "en" ? "/en/facilities/health-centers" : "/fr/installations/centres-sante";
     };

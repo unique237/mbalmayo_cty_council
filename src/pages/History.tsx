@@ -361,7 +361,7 @@ const History: React.FC = () => {
     <div className="py-12 md:py-16">
       <div className="container-custom">
         <h1 className="mb-8 text-3xl font-bold md:text-4xl">
-          {currentLang === "en" ? "About Mbalmayo" : "À Propos de Mbalmayo"}
+          {currentLang === "en" ? "Hiatory of Mbalmayo" : "Histoire de Mbalmayo"}
         </h1>
 
         {sections.map((section) => (

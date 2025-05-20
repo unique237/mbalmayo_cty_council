@@ -25,7 +25,16 @@ const LanguageSwitcher: React.FC = () => {
       'events': 'evenements',
       'sports': 'sports',
       'media': 'mediatheque',
-      'contact': 'contact'
+      'contact': 'contact',
+      'jobs' : 'emplois',
+      //facilities sub-routes
+      /*'schools': 'ecoles',
+      'markets': 'marches',
+      'transport-roads': 'transport-routes',
+      'security-services': 'services-securite',
+      'health-centers': 'centres-sante',*/
+      'internships' : 'stages',
+      'tenders' : 'appels-d-offres'
     };
     
     const frToEnRoutes: {[key: string]: string} = {
@@ -37,7 +46,16 @@ const LanguageSwitcher: React.FC = () => {
       'evenements': 'events',
       'sports': 'sports',
       'mediatheque': 'media',
-      'contact': 'contact'
+      'contact': 'contact',
+      'emplois' : 'jobs',
+      //facilities sub-routes
+      /*'ecoles': 'schools',
+      'marches': 'markets',
+      'transport-routes': 'transport-roads',
+      'services-securite': 'security-services',
+      'centres-sante': 'health-centers',*/
+      'stages' : 'internships',
+      'appels-d-offres' : 'tenders'
     };
     
     // Change the language in i18n
