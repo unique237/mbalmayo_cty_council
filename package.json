@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@react-google-maps/api": "^2.20.6",
-    "@real-robin/react": "^0.10.3",
+    "@real-robin/react": "^0.10.6",
     "date-fns": "^3.6.0",
     "framer-motion": "^12.9.2",
     "i18next": "^23.10.1",
